@@ -2,22 +2,7 @@
 #Author: @bobsecq
 #Contributor(s):
 
-__class_name__="call"
-
-from pupylib.PupyModule import *
-import os, datetime
-
-@config(cat="gather", compat=["android"])
-class call(PupyModule):
-    """ to get call details """
-    
-    INCOMING_TYPE = "1"
-    OUTGOING_TYPE = "2"
-    MISSED_TYPE = "3"
-
-    def init_argparse(self):
-        self.arg_parser = PupyArgumentParser(prog='call', description=self.__doc__
-        self.arg_parser.add_argument('-a', '--get-all', action='store_true', help='get all call details')
+_action='store_true', help='get all call details')
         self.arg_parser.add_argument('-output-folder', dest='localOutputFolder', default='output/', help="Folder which will store targtet's postions (default: %(default)s)")
 
     def run(self, args):
